@@ -8,24 +8,31 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      server-addr: 192.168.26.130:8848
+
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
     map-underscore-to-camel-case: true
+
+
 logging:
   level:
     cn.itcast: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
 
-eureka:
-  client:
-    #是否从eureka中抓取注册信息
-    fetch-registry: true
-    #使用eureka注册
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:10086/eureka
+
+#eureka:
+#  client:
+#    #是否从eureka中抓取注册信息
+#    fetch-registry: true
+#    #使用eureka注册
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:10086/eureka
 
 user-service:
   ribbon:
