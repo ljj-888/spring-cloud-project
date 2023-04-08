@@ -6,7 +6,6 @@ import org.mybatis.spring.annotation.MapperScan;
 
 @MapperScan("cn.itcast.user.mapper")
 @SpringBootApplication
-//@EnableEurekaClient
 public class UserApplication {
     public static void main(String[] args) {
         SpringApplication.run(UserApplication.class, args);

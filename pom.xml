@@ -29,6 +29,11 @@
         <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
         <mysql.version>5.1.47</mysql.version>
         <mybatis.version>2.1.1</mybatis.version>
+        <nacos.version>2.2.5.RELEASE</nacos.version>
+        <spring-alibaba-cloud.version>2.2.5.RELEASE</spring-alibaba-cloud.version>
+        <spring-web.version>2.7.6</spring-web.version>
+        <nacos-config.version>2021.0.1.0</nacos-config.version>
+
     </properties>
 
     <dependencyManagement>
@@ -44,8 +49,14 @@
 
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.2.5.RELEASE</version>
+                <version>${spring-alibaba-cloud.version}</version>
             </dependency>
             <!-- mysql驱动 -->
             <dependency>
@@ -59,6 +70,21 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.version}</version>
             </dependency>
+
+            <!--web-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-web.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${nacos-config.version}</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
     <dependencies>

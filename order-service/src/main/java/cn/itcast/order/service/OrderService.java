@@ -22,7 +22,7 @@ public class OrderService {
         // 2.利用RestTemplate发起HTTP请求，查询用户
         // 2.1 url路径
         // 2.2 发送http请求，实现远程调用
-        String url="http://user-service/user/"+order.getUserId();
+        String url="http://userservice/user/"+order.getUserId();
         User user = restTemplate.getForObject(url, User.class);
         //3.封装User到Order
         order.setUser(user);

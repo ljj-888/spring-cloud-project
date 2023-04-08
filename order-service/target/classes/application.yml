@@ -11,6 +11,10 @@ spring:
   cloud:
     nacos:
       server-addr: 192.168.26.130:8848
+      discovery:
+        cluster-name: HZ
+        namespace: d02e08ec-0a40-4c94-8161-146ee48ad33b
+        ephemeral: true
 
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
@@ -32,11 +36,11 @@ logging:
 #    #使用eureka注册
 #    register-with-eureka: true
 #    service-url:
-#      defaultZone: http://localhost:10086/eureka
+#      defaultZone: http:ost:10086/eureka
 
 user-service:
   ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
 
 ribbon:
   eager-load:
