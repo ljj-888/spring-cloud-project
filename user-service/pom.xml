@@ -39,6 +39,12 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>org.webjars.bower</groupId>-->
+<!--            <artifactId>bootstrap</artifactId>-->
+<!--            <version>5.2.0-beta1</version>-->
+<!--        </dependency>-->
+
         <!--nacos的配置管理依赖-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
