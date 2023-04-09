@@ -2,19 +2,20 @@ server:
   port: 8080
 spring:
   application:
-    name: order-server
+    name: orderserver
   datasource:
-    url: jdbc:mysql://192.168.26.130:3306/cloud-order?useSSL=false
+    url: jdbc:mysql://localhost:3306/cloud?useSSL=false
     username: root
-    password: root
+    password: 975409698ljj
     driver-class-name: com.mysql.jdbc.Driver
   cloud:
     nacos:
-      server-addr: 192.168.26.130:8848
-      discovery:
-        cluster-name: HZ
-        namespace: d02e08ec-0a40-4c94-8161-146ee48ad33b
-        ephemeral: true
+      server-addr: localhost:80
+#      discovery:
+#        cluster-name: HZ
+#        namespace: d02e08ec-0a40-4c94-8161-146ee48ad33b
+#        ephemeral: true
+
 
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
@@ -38,16 +39,28 @@ logging:
 #    service-url:
 #      defaultZone: http:ost:10086/eureka
 
-user-service:
-  ribbon:
-    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+#user-service:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
 
 ribbon:
   eager-load:
     enabled: true #开启饥饿加载
-    clients: user-service  #指定饥饿加载的服务名称
+    clients: userservice  #指定饥饿加载的服务名称
 
     #如果有多个服务
     #clients:
         #- XXXXXXX
         #- XXXXXXX
+#feign:
+#  client:
+#    config:
+feign:
+  client:
+    config:
+      default: #这里用default就是全局配置，如果是写服务名称，则是针对某个微服务的配置
+        loggerLevel: BASIC  #日志级别，BASIC是基本的请求和响应信息
+  httpclient:
+    enabled: true #开启feign对HttpClient的支持
+    max-connections: 200 #最大的连接数
+    max-connections-per-route: 50 #每个路径最大连接数  route:路径
