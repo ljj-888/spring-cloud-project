@@ -10,7 +10,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   cloud:
     nacos:
-      server-addr: localhost:80
+      server-addr: localhost:8848
 #      discovery:
 #        cluster-name: HZ
 #        namespace: d02e08ec-0a40-4c94-8161-146ee48ad33b
@@ -58,7 +58,7 @@ ribbon:
 feign:
   client:
     config:
-      default: #这里用default就是全局配置，如果是写服务名称，则是针对某个微服务的配置
+      userservice: #这里用default就是全局配置，如果是写服务名称，则是针对某个微服务的配置
         loggerLevel: BASIC  #日志级别，BASIC是基本的请求和响应信息
   httpclient:
     enabled: true #开启feign对HttpClient的支持

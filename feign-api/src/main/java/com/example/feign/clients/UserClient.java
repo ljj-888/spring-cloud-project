@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(value = "userservice",configuration = FeignClientConfiguration.class)
-@Component
 public interface UserClient {
 
     @GetMapping("/user/{id}")
