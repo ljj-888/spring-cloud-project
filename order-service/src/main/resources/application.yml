@@ -4,13 +4,13 @@ spring:
   application:
     name: orderserver
   datasource:
-    url: jdbc:mysql://localhost:3306/cloud?useSSL=false
+    url: jdbc:mysql://mysql:3306/cloud?useSSL=false
     username: root
     password: 975409698ljj
     driver-class-name: com.mysql.jdbc.Driver
   cloud:
     nacos:
-      server-addr: localhost:8848
+      server-addr: nacos:8848
 #      discovery:
 #        cluster-name: HZ
 #        namespace: d02e08ec-0a40-4c94-8161-146ee48ad33b
